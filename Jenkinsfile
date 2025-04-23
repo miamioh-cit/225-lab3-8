@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         DOCKER_CREDENTIALS_ID = 'roseaw-dockerhub'
-        GITHUB_URL = 'https://github.com/miamioh-cit/225-lab3-8.git'                                    //<------This github URL
-        KUBECONFIG = credentials('roseaw-225')                                                          //<------Your MiamiID
+        GITHUB_URL = 'https://github.com/dikshyapyakurel/225-lab3-8.git'                                    //<------This github URL
+        KUBECONFIG = credentials('pyakurd-225')                                                          //<------Your MiamiID
     }
 
     stages {
@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build Mongo Stateful Set') {
             steps {
-                script {                                                                                // Be sure that you have added the mongo-secret.yaml to your cluster before you run your pipeline, or uncomment the next line of code.
+                script {                                                                                 // Be sure that you have added the mongo-secret.yaml to your cluster before you run your pipeline, or uncomment the next line of code.
 
                     // sh 'kubectl apply -f mongo-secret.yaml'
                     sh 'kubectl apply -f mongo.yaml'
